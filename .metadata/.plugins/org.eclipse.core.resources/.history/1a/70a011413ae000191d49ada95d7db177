@@ -1,0 +1,55 @@
+package practice;
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class Practice_part2 {
+	
+	/*
+//1번문제. 지금으로써는 아스키코드값 32빼는 방법밖에 모름 ㅡㅡ
+	public static void main(String args[]){
+		Scanner sc = new Scanner(System.in);
+		char eng = sc.next().charAt(0);
+		
+		if(eng >= 97 && eng <= 122) //eng is small letter
+			eng -= 32;
+		else if(eng >= 65 && eng<= 90) //eng is capital letter
+			eng += 32;
+		else
+			System.out.println("영문자가 아닙니다.");
+		System.out.println(eng);
+		}
+		*/
+	
+	//2번문제. 
+	public static void main(String args[]) {
+	/*Scanner sc = new Scanner(System.in);
+	String privnumb = sc.next();
+	Scanner sc2 = new Scanner(privnumb);
+	sc2.useDelimiter("\\s|-");
+	//Pattern privnumb = sc.delimiter(); 이렇게 하면 뭐로 구분하는지 "\\s or -"가 출력됨
+	while(sc2.hasNext())
+		System.out.println(sc2.next());
+	
+	sc.close();
+	
+		//sol1 - fail(already gets distinguished from the line 37th. that's why it's got infinite loop of the first string)
+		Scanner sc = new Scanner(System.in).useDelimiter("\\s|-");
+		String a = sc.next();
+		while(sc.hasNext()){
+			System.out.println(a);
+		}
+		sc.close();
+		
+		//sol2 - fail(Cant use sc.next().useDelimiter("\\s|-");)
+		Scanner sc = new Scanner(System.in);
+		String a = sc.useDelimiter("\\s|-").next();
+		while(sc.hasNext()){
+			System.out.println(a);
+		}
+		sc.close();
+		*/
+		
+		//그래서 그냥 
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;NumberformatException/src/NumberFormatException.java&apos; to &apos;NumException.java&apos;" description="Rename resource &apos;NumberFormatException.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/NumberFormatException.java" name="NumException.java" stamp="1569929252747" updateReferences="true"/>
+</session>

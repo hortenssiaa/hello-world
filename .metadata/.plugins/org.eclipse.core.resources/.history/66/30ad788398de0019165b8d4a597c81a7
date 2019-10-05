@@ -1,0 +1,9 @@
+
+public class Hello2030 {
+	public static void main(String[] args) {
+		int n=23;
+		System.out.println("Hakyung Sohn");
+		System.out.println(n+" Years old");
+		System.out.println("I'm majoring Computer engineering");
+	}
+}

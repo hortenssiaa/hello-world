@@ -1,0 +1,14 @@
+package gaba_part3;
+
+public class Ex3_12 {
+	
+	static int[][] makeArray(){
+		int[][] tmp = new int[4][];
+		tmp[0] = {345,23,5};
+		tmp[1] = {80,12};
+		tmp[2] = {7};
+		tmp[3] = {100,35,3,123,45};
+		return tmp;
+	}
+	
+}
