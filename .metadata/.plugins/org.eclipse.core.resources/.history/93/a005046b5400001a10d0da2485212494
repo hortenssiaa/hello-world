@@ -1,0 +1,97 @@
+package Chapter5_practice1_6;
+
+import java.util.Scanner;
+
+interface Stack {
+	int length();
+	Object pop();
+	boolean push(Object ob);
+}
+
+public class StringStack implements Stack{
+	static Scanner sc = new Scanner(System.in);
+	static int stackSize;
+	static int point;
+	int arrParameter;
+	static String stackArray[];
+	
+	public StringStack(int stackSize) {
+		this.stackSize=stackSize;
+		stackArray = new String[this.stackSize];
+		//arrParameter=-1;
+		point=-1;
+		
+		for(int i=0; i<stackArray.length; i++)
+			stackArray[i]=null;
+	}
+	
+	public int length(){
+		return stackSize;
+	}
+	
+	public static boolean push(Object ob){
+		//객체 주소로 받았으니 그 주소에서 연결되는 스택에
+		//if 자리 있으면 push 하고
+		//return true;
+		
+		//if 자리 없으면 
+		//문자열 삽입
+		
+		if(empty()){
+			point++;
+			
+			System.out.print("Write String>>");
+			stackArray[point]=sc.nextLine();
+			return true;
+		} else
+			return false;
+		
+		
+		
+	}
+	public static boolean empty(){
+		if(point == -1){
+			System.out.println("You have space to push.");
+			return true;
+		} else if(point >= stackSize){
+			System.out.println("You don't have space to push.");
+			return false;
+		} else if(-1<point && point<stackSize){
+			System.out.println("You have space to push.");
+			return true;
+		} else{
+			System.out.println("You don't have space to push.");
+			return false;
+		}
+	}
+	
+	public Object pop(){
+		return null; //문자열 출력
+	}
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int menu=0;
+		int stSize = 5;
+		
+		System.out.print("Push<1>, Pop<2>, Stack Length<3> >>");
+		menu = sc.nextInt();
+		
+		switch(menu){
+			case 1:
+				while(push(new StringStack(stSize))){//이것이 실행될때 생성자먼저 호출됨
+				}
+				break;
+				
+			case 2:
+				break;
+				
+			case 3:
+				System.out.println("The size of the String Stack>>"+StringStack.stackSize);
+				break;
+		}
+		
+	}
+
+}

@@ -1,0 +1,23 @@
+package ch5_examples;
+
+class Person_Ov{
+	String phone;
+	protected void getPhone(){
+		System.out.println(phone);
+	}
+}
+class Professor_Ov extends Person_Ov{
+	String phone;
+	protected void getPhone(){
+		System.out.println(phone);
+	}
+}
+
+
+public class Overriding {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

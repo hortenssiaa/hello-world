@@ -1,0 +1,33 @@
+package ch5_examples;
+
+class Person_Ov{
+	private String phone;
+	protected void setPhone(String phone){
+		this.phone=phone;
+	}
+	protected void getPhone(){
+		System.out.println("Person : "+phone);
+	}
+}
+class Professor_Ov extends Person_Ov{
+	private String phone;
+	protected void setPhone(String phone){
+		this.phone=phone;
+	}
+	protected void getPhone(){
+		super.getPhone();
+		System.out.println("Professor : "+phone);
+	}
+}
+
+
+public class Overriding {
+
+	public static void main(String[] args) {
+		Professor_Ov professor = new Professor_Ov();
+		professor.se
+		Person_Ov person = new Professor_Ov();
+		person.getPhone();
+	}
+
+}

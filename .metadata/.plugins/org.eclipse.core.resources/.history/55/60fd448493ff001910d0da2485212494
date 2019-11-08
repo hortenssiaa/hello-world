@@ -1,0 +1,21 @@
+package Chapter5_practice1_6;
+
+public class InkjetPrinter extends Printer{
+	private int ink=500;
+	private int inkRemains;
+	private int numofPrints=0;
+	
+	public InkjetPrinter(int i, String a, String b, String c) {
+		super(i, a, b, c); 
+		numofPrints = i; //인쇄매수
+	}
+	public InkjetPrinter() {}
+	protected int getInkRemains(){
+		inkRemains=ink-(10*numofPrints);
+		return inkRemains;
+	}
+	protected void print(){ 
+		System.out.println("Remains of Ink>> "+getInkRemains());
+		System.out.println("");
+	}
+}

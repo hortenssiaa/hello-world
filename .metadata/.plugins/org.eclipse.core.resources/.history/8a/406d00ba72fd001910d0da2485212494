@@ -1,0 +1,148 @@
+package ch5_examples;
+
+import java.util.Scanner;
+
+/*
+interface Base{
+	void add();
+	void In
+}*/
+
+class Product{
+	Scanner sc = new Scanner(System.in);
+	int id=-1; //고유한 식별자
+	String category; //상품 설명
+	String productor; //생산자
+	int price; //가격
+	
+	
+	public Product() { //서브클래스들보다 Product(슈퍼클래스)의 생성자가 먼저 출력됨!
+		System.out.print("상품 설명>>");
+		category = sc.next();
+		System.out.print("생산자>>");
+		productor = sc.next();
+		System.out.print("가격>>");
+		price = sc.nextInt();
+		this.id++; //맞나..? 아마 [0]부터 id가 0부터 저장 될것임!
+	}
+}
+
+class Book extends Product{ //책
+	int ISBN; 
+	String author;
+	String bookName;
+	int key=1;
+	
+	public Book() {
+		System.out.print("책 제목>>");
+		bookName = sc.next();
+		System.out.print("저자>>");
+		author = sc.next();
+		System.out.print("ISBN>>");
+		ISBN = sc.nextInt();
+	}
+}
+
+class ConversationBook extends Book{ //회화책
+	Scanner sc = new Scanner(System.in);
+	String language;
+	int key=2;
+
+	public ConversationBook() {
+		System.out.print("언어>>");
+		language = sc.next();
+	}
+}
+
+class CompactDisc extends Product{ //음악	CD
+	Scanner sc = new Scanner(System.in);
+	String cdName; //앨범 제목
+	String singer; //가수
+	int key=3;
+	
+	public CompactDisc() {
+		System.out.print("앨범 제목>>");
+		cdName = sc.next();
+		System.out.print("가수>>");
+		singer = sc.next();
+	}
+}
+
+
+
+
+public class ProductInfo {
+	Scanner sc = new Scanner(System.in);
+	
+	public static void inquiry(Product p){ //조회
+		System.out.println("상품ID>>"+p.id);
+		System.out.println("상품 설명>>"+p.category);
+		System.out.println("생산자>>"+p.productor);
+	
+		if(p instanceof Book){ //책
+			p = (Book)p;
+			System.out.println("ISBN>>"+p.IS);
+		}
+		if(p instanceof Book && p instanceof ConversationBook){ //영어회화책
+			System.out.println("");
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Product[] p = new Product[10];
+		Book[] book = new Book[10]; //roductMenu==1
+		CompactDisc[] cd = new CompactDisc[10]; //roductMenu==2
+		ConversationBook[] cv = new ConversationBook[10]; //roductMenu==3
+		int menu=0, productMenu=0;
+		//int b=0, c=0, conv=0; //b for Book[], c for CompactDisc[], conv for ConversationBook[]
+		int count=0, i=0; //count for counting the num of the products, i for counting 
+		
+		do{
+			System.out.print("상품 추가<1>, 모든 상품 조회<2>, 끝내기<3>>>"); //menu
+			menu = sc.nextInt();
+			System.out.print("상품 종류 책<1>, 음악CD<2>, 회화책<3>>>"); //productMenu
+			productMenu = sc.nextInt();
+			
+			//menu==1
+			if(count<10){
+				if(menu==1 && productMenu==1){
+					p[count] = new Book();
+					book[count] = (Book) p[count];
+					count++;
+				} else if(menu==1 && productMenu==2){
+					p[count] = new CompactDisc();
+					cd[count] = (CompactDisc) p[count];
+					count++;
+				} else if(menu==1 && productMenu==3){
+					p[count] = new ConversationBook();
+					cv[count] = (ConversationBook) p[count];
+					count++;
+				}
+			}
+			
+			//menu==2
+			if(menu==2){ //p[i]의 i의 값이 id값과 같음
+				System.out.print("상품ID>>");
+				int a = sc.nextInt();
+				if(p[a] instanceof ConversationBook && p[a] instanceof Book){
+					inquiry(cv[a]);
+				} else if(p[a] instanceof Book){
+					inquiry(book[a]);
+				} else if(p[a] instanceof CompactDisc){
+					inquiry(cd[a]);
+				}
+			}
+		
+			
+			
+			
+		} while(count<10);
+		
+
+		
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+package Chapter5_practice1_6;
+
+import java.util.Scanner;
+
+public class PrinterExample {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int numPrints=0;
+		Printer p;
+		
+		System.out.print("Printer<1>, InkJet Printer<2>, Laser Printer<3> >>");
+		System.out.print("인쇄 매수:");
+		numPrints=sc.nextInt();
+		p=new Printer(numPrints);
+		
+	}
+
+}

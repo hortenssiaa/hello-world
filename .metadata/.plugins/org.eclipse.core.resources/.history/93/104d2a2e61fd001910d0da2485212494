@@ -1,0 +1,110 @@
+package ch5_examples;
+
+import java.util.Scanner;
+
+public static final int count=0;
+abstract interface Base{
+	
+	abstract public void menu(int x);
+	abstract public void productMenu(int x);
+	void add(); //상품 추가
+	void inquiry(); //조회
+	void end(); //끝내기
+}
+
+class Product{
+	int id; //고유한 식별자
+	String category; //상품 설명
+	String productor; //생산자
+	int price; //가격
+}
+
+class Book extends Product{ //책
+	Scanner sc = new Scanner(System.in);
+	int ISBN; 
+	String author;
+	String bookName;
+	
+	public Book() {
+		System.out.print("상품 설명>>");
+		category = sc.next();
+		System.out.print("생산자>>");
+		productor = sc.next();
+		System.out.print("가격>>");
+		price = sc.nextInt();
+		System.out.print("책 제목>>");
+		bookName = sc.next();
+		System.out.print("저자>>");
+		author = sc.next();
+		System.out.print("ISBN>>");
+		ISBN = sc.nextInt();
+		
+	}
+	count++;
+}
+
+class ConversationBook extends Book{ //회화책
+	Scanner sc = new Scanner(System.in);
+	String language;
+
+	public ConversationBook() {
+		System.out.print("");
+	}
+	
+}
+
+class CompactDisc extends Product{ //음악	CD
+	String cdName; //앨범 제목
+	String singer; //가수
+}
+
+public class ProductInfo implements Base{
+	Scanner sc = new Scanner(System.in);
+	int x;
+	
+	public void menu(int x){
+		if(x==1)
+			this.add();
+		else if(x==2)
+			this.inquiry();
+		else if(x==3)
+			this.end();
+		else
+			System.out.println("잘못입력하셨습니다.");
+	}
+	
+	public void productMenu(int x){
+	}
+	public void add(){
+		System.out.print("상품 종류 책<1>, 음악CD<2>, 회화책<3>>>");
+		int x = sc.nextInt();
+		if(x==1)
+			
+	}
+	public void inquiry(){
+	}
+	public void end(){
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ProductInfo[] p;
+		int menu=0;
+		
+		do{
+			System.out.print("상품 추가<1>, 모든 상품 조회<2>, 끝내기<3>>>");
+			menu = sc.nextInt();
+			if(menu==1)
+		} while();
+		
+		for(int i=0; i<p.length; i++){
+			
+			
+			p[i].menu(menu);
+			
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,15 @@
+package Chapter5_practice1_6;
+
+public class Printer {
+	//프린터는 인쇄 매수를 받아야 한다
+	// 
+	String model;
+	String manufacture;
+	String interfaceType;
+	int paper=50;
+	int numOfSheets=0;
+	
+	protected void print(){
+		
+	}
+}

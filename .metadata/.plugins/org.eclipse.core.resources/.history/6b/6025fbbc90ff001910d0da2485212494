@@ -1,0 +1,12 @@
+package Chapter5_practice1_6;
+
+public class InkjetPrinter extends Printer{
+	private int inkRemains;
+	public InkjetPrinter(int i, String a, String b, String c) {
+		super(i, a, b, c); 
+		inkRemains = i;
+	}
+	protected void print(){ //잉크 잔량 표시
+		System.out.println("");
+	}
+}

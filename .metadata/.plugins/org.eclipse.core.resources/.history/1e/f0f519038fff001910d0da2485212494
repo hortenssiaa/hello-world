@@ -1,0 +1,19 @@
+package Chapter5_practice1_6;
+
+public class Printer {
+	//프린터는 인쇄 매수를 받아야 한다
+	// 
+	protected String model;
+	protected String manufacture;
+	protected String interfaceType;
+	protected int numOfPrints=0; //인쇄 매수
+	protected int numOfSheets=50; //인쇄 종이 잔량
+	
+	public Printer(int a) {numOfPrints=a;}
+	protected void print(){
+		//print 호출하면 인쇄가 되는 거잖아
+		//그니깐, numOfSheets--; + 종이잔량 알려주기
+		//인쇄매수는 여기 말고 다른데에서 set
+		System.out.println("Remains of Sheets: "+numOfSheets);
+	}
+}

@@ -1,0 +1,9 @@
+package Chapter5_practice1_6;
+
+public class PrinterExample {
+
+	public static void main(String[] args) {
+		System.out.println("인쇄 매수:");
+	}
+
+}

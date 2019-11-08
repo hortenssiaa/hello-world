@@ -1,0 +1,42 @@
+package ch5_examples;
+
+abstract class Base{
+	abstract public void menu(int x);
+	abstract public void productMenu(int x);
+}
+
+class Product{
+	int id; //고유한 식별자
+	String name; //상품 설명
+	String productor; //생산자
+	String price; //가격
+}
+
+class Book extends Product{ //책
+	int ISBN; 
+	String author;
+	String bookName;
+}
+
+class ConversationBook extends Book{ //회화책
+	String language;
+}
+
+class CompactDisc extends Product{ //음악	CD
+	String cdName; //앨범 제목
+	String singer; //가수
+}
+
+public class ProductInfo {
+	public void menu(int x){
+		System.out.println();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		System.out.print("상품 추가<1>, 모든 상품 조회<2>, 끝내기<3>>>");
+	}
+
+}

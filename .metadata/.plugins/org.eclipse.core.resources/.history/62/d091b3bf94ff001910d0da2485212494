@@ -1,0 +1,5 @@
+package Chapter5_practice1_6;
+
+public class LaserPrinter extends Printer{
+	//토너잔량
+}

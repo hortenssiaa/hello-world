@@ -1,0 +1,31 @@
+package ch5_examples;
+
+class Person_Ov{
+	private String phone;
+	public Person_Ov() {
+		// TODO Auto-generated constructor stub
+		
+	}
+	protected void getPhone(){
+		System.out.println(phone);
+	}
+}
+class Professor_Ov extends Person_Ov{
+	private String phone;
+	public Professor_Ov() {
+		this.phone = ""
+	}
+	protected void getPhone(){
+		super.getPhone();
+		System.out.println("Professor: "+phone);
+	}
+}
+
+
+public class Overriding {
+
+	public static void main(String[] args) {
+		Person_Ov person = new Professor_Ov();
+	}
+
+}

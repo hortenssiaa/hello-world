@@ -1,0 +1,41 @@
+package Chapter5_practice1_6;
+
+interface Stack {
+	int length();
+	Object pop();
+	boolean push(Object ob);
+}
+
+public class StringStack implements Stack{
+	int stackSize;
+	int point;
+	String stackArray[];
+	
+	public StringStack(int stackSize) {
+		this.stackSize=stackSize;
+		stackArray = new String[this.stackSize];
+	}
+	
+	public int length(){
+		return stackSize;
+	}
+	public Object pop(){
+		return null; //문자열 출력
+	}
+	public boolean push(Object ob){
+		//객체 주소로 받았으니 그 주소에서 연결되는 스택에
+		//if 자리 있으면 push 하고
+		//return true;
+		//if 자리 없으면 
+		return false; //문자열 삽입
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		int stackSize = 10;
+		StringStack ss = new StringStack(stackSize);
+	}
+
+}

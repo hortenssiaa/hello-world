@@ -1,0 +1,25 @@
+package Chapter5_practice1_6;
+
+class Base{}
+class Derived extends Base{}
+
+public class FamilyVSExactType {
+	
+	static void test(Object x){
+		System.out.println(x.getClass());
+		System.out.println(x instanceof Base);
+		System.out.println(x instanceof Derived);
+		System.out.println(Base.class.isInstance(x));
+		System.out.println(Derived.class.isInstance(x));
+		System.out.println(Base.class.equals(x));
+		System.out.println(Derived.class.equals(x));
+		System.out.println(x.getClass() == Base.class);
+		System.out.println(x.getClass() == Derived.class);
+	}
+
+	public static void main(String[] args) {
+		test(new Base());
+		test(new Derived());
+	}
+
+}

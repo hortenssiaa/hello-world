@@ -1,0 +1,39 @@
+package ch5_examples;
+
+abstract class Calculator{
+	public abstract int add(int a, int b);
+	public abstract int substract(int a, int b);
+	public abstract double average(int[] a);
+	public int testadd(int a, int b, int c){
+		return a+b+c;
+	}
+}
+public class GoodCalc extends Calculator{
+	int x;
+	public int add(int a, int b){
+		return a+b;
+	}
+	public int substract(int a, int b){
+		return a-b;
+	}
+	public double average(int[] a){
+		double sum=0;
+		for(int i=0; i<a.length; i++)
+			sum += a[i];
+		return sum/a.length;
+	}
+	public int sowhat(int x, int y, int i){
+		return x+y+i;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calculator c = new GoodCalc(); //c는 Calculator의 멤버밖에 못건들인다.
+		//GoodCalc g = new GoodCalc();
+		System.out.println(c.add(2, 3));
+		System.out.println(c.substract(2, 3));
+		System.out.println(c.average(new int[] {2,3,4}));
+		//System.out.println(g.x);
+	}
+
+}

@@ -1,0 +1,156 @@
+package ch5_examples;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class Product{
+	Scanner sc = new Scanner(System.in);
+	static int x=0;
+	int id=x; //고유한 식별자
+	String category; //상품 설명
+	String productor; //생산자
+	int price=0; //가격
+	
+	
+	public Product() { //서브클래스들보다 Product(슈퍼클래스)의 생성자가 먼저 출력됨!
+		System.out.print("상품 설명>>");
+		category = sc.nextLine();
+		System.out.print("생산자>>");
+		productor = sc.nextLine();
+		System.out.print("가격>>");
+		price = sc.nextInt();
+		x++;
+	}
+}
+
+class Book extends Product{ //책
+	Scanner sc = new Scanner(System.in);
+	int ISBN; 
+	String author;
+	String bookName;
+	
+	public Book() {
+		System.out.print("책 제목>>");
+		bookName = sc.nextLine();
+		System.out.print("저자>>");
+		author = sc.nextLine();
+		try{
+			System.out.print("ISBN>>");
+			ISBN = sc.nextInt();
+		}catch(InputMismatchException e){ 
+			System.out.println("잘못입력하셨습니다.");
+		}
+	}
+}
+
+class ConversationBook extends Book{ //회화책
+	Scanner sc = new Scanner(System.in);
+	String language;
+
+	public ConversationBook() {
+		System.out.print("언어>>");
+		language = sc.next();
+	}
+}
+
+class CompactDisc extends Product{ //음악	CD
+	Scanner sc = new Scanner(System.in);
+	String cdName; //앨범 제목
+	String singer; //가수
+	
+	public CompactDisc() {
+		System.out.print("앨범 제목>>");
+		cdName = sc.nextLine();
+		System.out.print("가수>>");
+		singer = sc.nextLine();
+	}
+}
+
+public class ProductInfo {
+	Scanner sc = new Scanner(System.in);
+	
+	public static void inquiry(Product p){ //조회
+		System.out.println("상품 설명>>"+p.category);
+		System.out.println("생산자>>"+p.productor);
+	
+		if(p instanceof Book){ //책
+			Book ex_B = (Book)p;
+			System.out.println("ISBN>>"+ex_B.ISBN);
+			System.out.println("저자>>"+ex_B.author);
+			System.out.println("책 제목>>"+ex_B.bookName);
+		}
+		if(p instanceof ConversationBook){ //영어회화책
+			ConversationBook ex_CB = (ConversationBook)p;
+			System.out.println("언어>>"+ex_CB.language);
+		}
+		if(p instanceof CompactDisc){ //CD
+			CompactDisc ex_CD = (CompactDisc)p;
+			System.out.println("앨범 제목>>"+ex_CD.cdName);
+			System.out.println("가수>>"+ex_CD.singer);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Product[] p = new Product[10];
+		Book[] book = new Book[10]; //roductMenu==1
+		CompactDisc[] cd = new CompactDisc[10]; //roductMenu==2
+		ConversationBook[] cv = new ConversationBook[10]; //roductMenu==3
+		int menu=0, productMenu=0;
+		int count=0; //count for counting the num of the products
+		
+		LABEL:
+		do{
+			System.out.print("상품 추가<1>, 모든 상품 조회<2>, 끝내기<3>>>"); //menu
+			menu = sc.nextInt();
+			
+			//menu==1
+			if(menu==1){
+				System.out.print("상품 종류 책<1>, 음악CD<2>, 회화책<3>>>"); //productMenu
+				productMenu = sc.nextInt();
+				
+				if(count<10){
+					if(menu==1 && productMenu==1){
+						p[count] = new Book();
+						book[count] = (Book) p[count];
+						count++; 
+					} else if(menu==1 && productMenu==2){
+						p[count] = new CompactDisc();
+						cd[count] = (CompactDisc) p[count];
+						count++;
+					} else if(menu==1 && productMenu==3){
+						p[count] = new ConversationBook();
+						cv[count] = (ConversationBook) p[count];
+						count++; 
+					}
+				}
+			}
+			
+			//menu==2
+			if(menu==2){ //p[i]의 i의 값이 id값과 같음
+				for(int i=0; i<count; i++){
+					System.out.print("상품ID>>");
+					int a = sc.nextInt();
+					if(p[a] instanceof ConversationBook && p[a] instanceof Book){ //ConversationBook
+						inquiry(cv[a]);
+					} else if(p[a] instanceof Book && !(p[a] instanceof ConversationBook)){ //Book
+						inquiry(book[a]);
+					} else if(p[a] instanceof CompactDisc){ 
+						inquiry(cd[a]);
+					}
+				}
+			}
+			
+			//menu==3
+			if(menu==3) //exit
+				break LABEL;
+			
+			System.out.println();
+		} while(count<10);
+		
+
+		
+		
+	}
+
+}

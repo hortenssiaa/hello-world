@@ -1,0 +1,21 @@
+package Chapter5_practice1_6;
+
+public class ObjectExamples {
+	int a;
+	private int b;
+	int array[];
+	public ObjectExamples() {
+		b=5;
+		array = new int[b];
+		
+		System.out.println("오브젝트 생성자 호출되었엄");
+	}
+	void show(){
+		for(int i=0; i<b; i++)
+			array[i] = (int) Math.round(Math.random()*9+1);
+	}
+	
+	public static void main(String[] args){
+		
+	}
+}

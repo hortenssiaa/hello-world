@@ -1,0 +1,33 @@
+package Chapter5_practice1_6;
+
+class Base{}
+class Derived extends Base{}
+
+public class FamilyVSExactType {
+	
+	static void test(Object x){
+		System.out.println(x.getClass());
+		System.out.println(x instanceof Base);
+		System.out.println(x instanceof Derived);
+		System.out.println(Base.class.isInstance(x));
+		System.out.println(Derived.class.isInstance(x));
+		System.out.println(Base.class.equals(x));
+		System.out.println(Derived.class.equals(x));
+		System.out.println(x.getClass() == Base.class);
+		System.out.println(x.getClass() == Derived.class);
+		System.out.println();
+		
+		Class c1 = x.getClass();
+		Class c2 = Base.class;
+		System.out.println("c1.hashCode():"+c1.hashCode());
+		System.out.println("ce.hashCode()"+c2.hashCode());
+		System.out.println(x.getClass().hashCode());
+		System.out.println(Base.class.hashCode());
+	}
+
+	public static void main(String[] args) {
+		test(new Base());
+		test(new Derived());
+	}
+
+}
