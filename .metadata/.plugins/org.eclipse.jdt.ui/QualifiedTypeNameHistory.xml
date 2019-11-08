@@ -2,5 +2,37 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="MyExp"/>
+<fullyQualifiedTypeName name="GoodsArray"/>
+<fullyQualifiedTypeName name="java.security.GeneralSecurityException"/>
+<fullyQualifiedTypeName name="Goods"/>
+<fullyQualifiedTypeName name="ArrayParameter"/>
+<fullyQualifiedTypeName name="Book"/>
+<fullyQualifiedTypeName name="CurrencyConverter"/>
+<fullyQualifiedTypeName name="changeCurrency"/>
+<fullyQualifiedTypeName name="CurrencConverter"/>
+<fullyQualifiedTypeName name="WordGameApp"/>
+<fullyQualifiedTypeName name="Player"/>
+<fullyQualifiedTypeName name="Song"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="Practice4_4.Rectangle"/>
+<fullyQualifiedTypeName name="Practice4_4.ArrayUtility"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="practice4_4.ArrayUtility2"/>
+<fullyQualifiedTypeName name="practice4_4.Inquiry"/>
+<fullyQualifiedTypeName name="practice4_4.Calculator"/>
+<fullyQualifiedTypeName name="practice4_4.Cancel"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="practice4_4.Reserve"/>
+<fullyQualifiedTypeName name="ch5_examples.Point"/>
+<fullyQualifiedTypeName name="ch5_examples.ColorPoint"/>
+<fullyQualifiedTypeName name="ch5_examples.Person"/>
+<fullyQualifiedTypeName name="ch5_examples.Student"/>
 </qualifiedTypeNameHistroy>

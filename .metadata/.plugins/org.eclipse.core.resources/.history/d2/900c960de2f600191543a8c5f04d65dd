@@ -1,0 +1,23 @@
+package ch5_examples;
+
+class Person{
+	int age; //default
+	public String name;
+	protected int height;
+	private int weight;
+	void setWeight(int weight){
+		this.weight = weight;
+	}
+	void getWeight(){
+		System.out.println(weight);
+	}
+}
+
+public class Student extends Person{
+	age = 
+	
+	public static void main(String[] args) {
+		
+	}
+
+}
