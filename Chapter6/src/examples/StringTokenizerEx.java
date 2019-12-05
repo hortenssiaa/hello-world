@@ -16,3 +16,17 @@ public class StringTokenizerEx {
 	}
 
 }
+
+
+/*
+It's now or never, come hole me tight. Kiss me darling, be mine tonight.
+Tomorrow will be too late. It's now or never, my love won't wait.
+When I first saw you, with your smile so tender.
+My heart was captured, my soul surrendered.
+I spent a lifetime, waiting for the right time.
+Now that your near, the time is here, at last.
+Just like a willow, we would cry an ocean.
+If we lost true love and sweet devotion.
+Your lips excited me, let your arms invite me.
+For who knows when we'll meet again this way.
+*/
