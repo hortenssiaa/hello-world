@@ -20,27 +20,27 @@ class GStack<T>{
 		if(count==0)
 			return null;
 		count--;//push에서 이미 count가 store배열의 size보다 +1 되어있기 때문
-		return (T)store[count];
+		return (T) store[count];
 	}
 }
 
 public class MyStack {
 
 	public static void main(String[] args){
-		GStack<String> gsStr = new GStack<String>();
-		gsStr.push("LA");
-		gsStr.push("busan");
-		gsStr.push("seoul");
+		GStack<String> stringStack = new GStack<String>();
+		stringStack.push("LA");
+		stringStack.push("busan");
+		stringStack.push("seoul");
 		
 		for(int i=0; i<3; i++)
-			System.out.println(gsStr.pop());
+			System.out.println(stringStack.pop());
 		
-		GStack<Integer> gsInt = new GStack<Integer>();
-		gsInt.push(5);
-		gsInt.push(3);
-		gsInt.push(1);
+		GStack<Integer> intStack = new GStack<Integer>();
+		intStack.push(5);
+		intStack.push(3);
+		intStack.push(1);
 		
 		for(int i=0; i<3; i++)
-			System.out.println(gsInt.pop());
+			System.out.println(intStack.pop());
 	}
 }
