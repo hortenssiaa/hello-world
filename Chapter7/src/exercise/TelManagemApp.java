@@ -29,15 +29,16 @@ public class TelManagemApp {
 		while(true){
 			System.out.print("ADD<1>, DELETE<2>, LOOK UP<3>, OVER ALL<4>, EXIT<5> : >> ");
 			int menu = sc.nextInt();
+			sc.nextLine();
 			
 			switch(menu){
 				case 1: //삽입
 					System.out.print("Name>>");
-					name=sc.next();
+					name=sc.nextLine();
 					
 					if(haveSameName(name, contacts)){
 						System.out.print("Address>>");
-						region=sc.next();
+						region=sc.nextLine();
 						System.out.print("Phone Number>>");
 						tel=sc.next();
 						
@@ -51,7 +52,7 @@ public class TelManagemApp {
 					
 				case 2: //삭제
 					System.out.print("Name>>");
-					name=sc.next();
+					name=sc.nextLine();
 					
 					Phone1 p =contacts.get(name);
 					if(p != null)
@@ -62,7 +63,7 @@ public class TelManagemApp {
 					
 				case 3: //찾기
 					System.out.print("Name>>");
-					name=sc.next();
+					name=sc.nextLine();
 					
 					Phone1 p1 = contacts.get(name); //키(name)에 매핑되는 어떤 값도 없으면 null 리턴
 					if(p1 != null)
