@@ -21,7 +21,7 @@ public class StudentInfo {
 	
 	protected void lookUpStuInfo(HashMap<String, StudentInfo> h, String name){	
 		if(h.get(name) != null){
-			if(name.equals(name))
+			if(name.equals(this.name))
 				System.out.println(name+"\t"+h.get(name).getMajor()+"\t"+h.get(name).getId()+"\t"+h.get(name).getGrade()+"\n");
 		} else //if the recieved parameter 'name' is wrong one 
 			System.out.println(name+" Dosen't Exist.\n");
